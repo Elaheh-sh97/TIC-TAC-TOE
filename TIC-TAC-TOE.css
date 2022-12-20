@@ -1,0 +1,37 @@
+body{
+background-color:white;
+}
+.board {
+  width: 400px;
+  height: 400px;
+  /* background-color: rgb(168, 112, 221); */
+  display: grid;
+  margin: 100px auto 40px auto;
+  padding: auto;
+  grid-template-columns: 133px 133px 133px;
+  grid-template-rows:133px 133px 133px;
+  grid-gap: 9px;
+
+}
+div.board [class*="cell"]{
+    background-color:rgb(171, 112, 176);
+    font-size: 59px;
+     display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in;
+
+}
+
+div.board [class*="cell"]:hover {
+  background-color: rgb(250, 201, 140);
+  box-shadow: 1px 1px 20px 0px rgb(250, 201, 140);
+}
+.board h1{
+  grid-column: 1/4;
+  grid-row: 1/3;
+
+  color:rgb(151, 33, 143);
+  font-size: 60px;
+ display: inline;
+}
