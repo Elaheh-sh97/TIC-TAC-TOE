@@ -141,17 +141,6 @@ function choosingcells(player) {
             ".board"
           ).innerHTML = `<h1>${"Player2 win 🥳"}</h1>`;
         }
-      } else if (
-        arr[0] != arr[1] &&
-        arr[1] != arr[2] &&
-        arr[2] != arr[3] &&
-        arr[3] != arr[4] &&
-        arr[4] != arr[5] &&
-        arr[5] != arr[6]
-      ) {
-        document.querySelector(
-          ".board"
-        ).innerHTML = `<h1>${"Nobody wins"}</h1>`;
       }
     });
   });
