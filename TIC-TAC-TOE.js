@@ -1,17 +1,23 @@
-let player1 = prompt("Choose X or O:").toUpperCase();
+
+let player1;
 let player2;
 let choosedcells;
 let arr = [];
 let counter = 0;
+document.getElementById("btn").addEventListener("click", function(){
+   player1 = prompt("Choose X or O:").toUpperCase();
+  sessionStorage.setItem("player1", player1);
+  if (player1 == "X") {
+    player2 = "O";
+    sessionStorage.setItem("player2", player2);
+  } else {
+    player2 = "X";
+    sessionStorage.setItem("player2", player2);
+  }
+  document.appendChild()
+})
 //choosing X or O
-sessionStorage.setItem("player1", player1);
-if (player1 == "X") {
-  player2 = "O";
-  sessionStorage.setItem("player2", player2);
-} else {
-  player2 = "X";
-  sessionStorage.setItem("player2", player2);
-}
+
 
 //choosing cells
 function choosingcells(player) {
@@ -24,9 +30,16 @@ function choosingcells(player) {
       } else {
         player = player1;
       }
-      choosedcell.textContent = player;
-      arr[index] = player;
+      
+      if(arr[index]!=="X" && arr[index]!=="O"){
+ arr[index] = player;
+ choosedcell.textContent = player;
+      }else{
+        alert("choosen before!");
+      }
+     
       console.log(arr);
+      console.log(counter);
 
       //winning;
       if (
@@ -142,6 +155,11 @@ function choosingcells(player) {
           ).innerHTML = `<h1>${"Player2 win 🥳"}</h1>`;
         }
       }
+  else if(counter===9){
+     document.querySelector(
+       ".board"
+     ).innerHTML = `<h1>${"No one wins 😅"}</h1>`;
+  }
     });
   });
 }
